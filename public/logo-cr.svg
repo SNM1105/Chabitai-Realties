@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <rect width="256" height="256" fill="#000000"/>
+  <rect x="16" y="16" width="224" height="224" stroke="#FFFFFF" stroke-width="9"/>
+  <text
+    x="128"
+    y="156"
+    text-anchor="middle"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="150"
+    font-weight="900"
+    letter-spacing="-10"
+    fill="#EACB58"
+  >
+    CR
+  </text>
+</svg>
