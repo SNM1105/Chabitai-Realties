@@ -51,9 +51,17 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="text-xs font-semibold uppercase tracking-[0.12em] text-white/70 md:hidden">
-            Buy · Sell · Leasing
-          </div>
+          <nav className="flex items-center gap-4 text-xs md:hidden">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-semibold uppercase tracking-[0.12em] text-white/75 hover:text-(--gold)"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </Container>
     </header>
