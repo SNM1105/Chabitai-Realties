@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 
 const navItems: Array<{ href: string; label: string }> = [
+  { href: "/about", label: "About" },
   { href: "/buy", label: "Buy" },
   { href: "/sell", label: "Sell" },
   { href: "/leasing", label: "Leasing" },

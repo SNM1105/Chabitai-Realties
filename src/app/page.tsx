@@ -36,9 +36,9 @@ const projects = [
   },
   {
     label: "Commercial",
-    title: "Mile-Ex Office Space",
-    sub: "Commercial lease · 3,400 sq ft",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+    title: "Anjou Office Space",
+    sub: "30 doors · Sold over asking",
+    img: "https://images.unsplash.com/photo-1625536024229-f410d3e935a7?w=600&q=80",
   },
   {
     label: "Leasing",
