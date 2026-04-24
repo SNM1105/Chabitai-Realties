@@ -60,7 +60,7 @@ export default function Home() {
         {/* Background media */}
         <div className="absolute inset-0 overflow-hidden">
           <HeroBoomerangVideo
-            src="/video/chabitai boomerang.mp4"
+            src="/video/chabitai_boomerang.mp4"
             poster={HERO_POSTER}
             className="h-full w-full object-cover object-center"
           />
