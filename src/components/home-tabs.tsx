@@ -104,7 +104,7 @@ export function HomeTabs({ initialTab }: { initialTab?: string }) {
       <ul className="mt-6 space-y-2 text-sm text-white/70">
         {current.points.map((item) => (
           <li key={item} className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold)]" />
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full]" />
             <span>{item}</span>
           </li>
         ))}
