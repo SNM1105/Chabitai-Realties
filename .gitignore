@@ -40,5 +40,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local large media
-public/video/chabitai boomerang.mp4
