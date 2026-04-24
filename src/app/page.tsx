@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
+import { HeroBoomerangVideo } from "@/components/hero-boomerang-video";
 import { HomeTabs } from "@/components/home-tabs";
 
 // All images: Unsplash (free for commercial use, no attribution required)
-const HERO_IMG = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80";
+const HERO_POSTER = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80";
 const ABOUT_IMG = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80";
 
 const services = [
@@ -56,14 +57,12 @@ export default function Home() {
         className="relative flex items-center justify-center"
         style={{ minHeight: "100vh" }}
       >
-        {/* Background image */}
+        {/* Background media */}
         <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src={HERO_IMG}
-            alt="Luxury Montreal Real Estate"
-            fill
-            className="object-cover object-center"
-            priority
+          <HeroBoomerangVideo
+            src="/video/hero-bw-source.mp4"
+            poster={HERO_POSTER}
+            className="h-full w-full object-cover object-center"
           />
           {/* Dark overlay */}
           <div
