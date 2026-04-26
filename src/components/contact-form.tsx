@@ -1,14 +1,11 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+  const [errorMessage, setErrorMessage] = useState("Error sending message. Please try again or email us directly.");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,26 +26,21 @@ export function ContactForm() {
     e.preventDefault();
     setLoading(true);
     setStatus("idle");
+    setErrorMessage("Error sending message. Please try again or email us directly.");
 
     try {
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error("EmailJS environment variables are not configured");
-      }
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          from_email: formData.email,
-          phone: formData.phone,
-          interest: formData.interest,
-          message: formData.message,
-          reply_to: formData.email,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        { publicKey }
-      );
+        body: JSON.stringify(formData),
+      });
+
+      const payload = (await response.json()) as { message?: string };
+      if (!response.ok) {
+        throw new Error(payload.message ?? "Unable to send message");
+      }
 
       setStatus("success");
       setFormData({
@@ -62,6 +54,8 @@ export function ContactForm() {
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       console.error("Error sending email:", error);
+      const message = error instanceof Error ? error.message : "Error sending message. Please try again or email us directly.";
+      setErrorMessage(message);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -192,7 +186,7 @@ export function ContactForm() {
         )}
         {status === "error" && (
           <div className="md:col-span-2 p-3 text-sm text-red-400 bg-red-950/20 border border-red-500/30 rounded">
-            ✗ Error sending message. Please try again or email us directly.
+            ✗ {errorMessage}
           </div>
         )}
       </form>

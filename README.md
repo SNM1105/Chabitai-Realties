@@ -24,6 +24,7 @@ This project uses EmailJS for the contact form. Add these environment variables 
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_PRIVATE_KEY=your_private_key
 ```
 
 The EmailJS template should accept these fields:
