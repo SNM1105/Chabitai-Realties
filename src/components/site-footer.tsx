@@ -14,14 +14,11 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Chabitai Realties · Montreal, Quebec
           </div>
           <div className="flex items-center gap-5">
-            <Link href="#" className="text-white/60 hover:text-[var(--gold)]">
-              Facebook
-            </Link>
-            <Link href="#" className="text-white/60 hover:text-[var(--gold)]">
-              X
-            </Link>
-            <Link href="#" className="text-white/60 hover:text-[var(--gold)]">
+            <Link href="https://www.instagram.com/gsw4lifeee" className="text-white/60">
               Instagram
+            </Link>
+            <Link href="https://www.linkedin.com/company/chabitairealties/" className="text-white/60">
+              LinkedIn
             </Link>
           </div>
         </div>

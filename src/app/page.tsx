@@ -36,7 +36,7 @@ const projects = [
   },
   {
     label: "Commercial",
-    title: "Anjou Office Space",
+    title: "Anjou Multi-Unit Buildings",
     sub: "30 doors · Sold over asking",
     img: "https://images.unsplash.com/photo-1625536024229-f410d3e935a7?w=600&q=80",
   },
