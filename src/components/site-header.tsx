@@ -20,7 +20,7 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/CR logo.png"
+              src="/cr-logo.png"
               alt="Chabitai Realties"
               width={64}
               height={64}

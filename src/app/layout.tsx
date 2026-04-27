@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     siteName: "Chabitai Realties",
     images: [
       {
-        url: "https://www.chabitairealties.ca/cr-logo.png",
+        url: "https://www.chabitairealties.ca/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Chabitai Realties Logo",
+        alt: "Chabitai Realties logo",
       },
     ],
     locale: "en_CA",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Chabitai Realties",
     description:
       "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
-    images: ["https://www.chabitairealties.ca/cr-logo.png"],
+    images: ["https://www.chabitairealties.ca/opengraph-image"],
   },
 };
 
