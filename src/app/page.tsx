@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
     images: [
       {
-        url: "https://www.chabitairealties.ca/cr-logo.png",
+        url: "https://www.chabitairealties.ca/opengraph-image?v=2",
         width: 1200,
         height: 630,
         alt: "Chabitai Realties logo",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://www.chabitairealties.ca/cr-logo.png"],
+    images: ["https://www.chabitairealties.ca/opengraph-image?v=2"],
   },
 };
 
