@@ -16,12 +16,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.chabitairealties.ca"),
   title: {
     default: "Chabitai Realties",
     template: "%s | Chabitai Realties",
   },
   description:
     "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
+  icons: {
+    icon: "/logo-cr.svg",
+    shortcut: "/logo-cr.svg",
+  },
+  openGraph: {
+    title: "Chabitai Realties",
+    description:
+      "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
+    url: "https://www.chabitairealties.ca",
+    siteName: "Chabitai Realties",
+    images: [
+      {
+        url: "/CR logo.png",
+      },
+    ],
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chabitai Realties",
+    description:
+      "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
+    images: ["/CR logo.png"],
+  },
 };
 
 export default function RootLayout({
