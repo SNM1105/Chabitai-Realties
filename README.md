@@ -6,6 +6,8 @@ First, run the development server:
 
 ```bash
 npm run dev
+# if Turbopack crashes on your machine
+npm run dev:webpack
 # or
 yarn dev
 # or
@@ -21,9 +23,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 This project uses EmailJS for the contact form. Add these environment variables to a local `.env.local` file in `chabitairealties-web`:
 
 ```bash
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
+EMAILJS_PUBLIC_KEY=your_public_key
 EMAILJS_PRIVATE_KEY=your_private_key
 ```
 
