@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     if (missingVars.length > 0) {
       return NextResponse.json(
         {
-          message: "Email service is not fully configured.",
+          message: `Email service is not fully configured. Missing: ${missingVars.join(", ")}`,
           missing: missingVars,
         },
         { status: 500 }
