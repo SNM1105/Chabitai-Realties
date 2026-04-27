@@ -29,6 +29,15 @@ EMAILJS_PUBLIC_KEY=your_public_key
 EMAILJS_PRIVATE_KEY=your_private_key
 ```
 
+The API route also accepts these aliases (useful for migration):
+
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+- `EMAILJS_ACCESS_TOKEN` (alias for `EMAILJS_PRIVATE_KEY`)
+
+For Vercel, set the 4 primary `EMAILJS_*` variables in all required environments (Production and Preview), then redeploy.
+
 The EmailJS template should accept these fields:
 
 - `first_name`

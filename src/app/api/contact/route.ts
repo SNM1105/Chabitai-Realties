@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+
 type ContactPayload = {
   firstName: string;
   lastName: string;
@@ -11,6 +13,16 @@ type ContactPayload = {
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function getEnvValue(keys: string[]): string | undefined {
+  for (const key of keys) {
+    const value = process.env[key];
+    if (value && value.trim().length > 0) {
+      return value.trim();
+    }
+  }
+  return undefined;
 }
 
 export async function POST(request: Request) {
@@ -30,16 +42,30 @@ export async function POST(request: Request) {
       );
     }
 
-    const serviceId = process.env.EMAILJS_SERVICE_ID ?? process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.EMAILJS_TEMPLATE_ID ?? process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY ?? process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    const privateKey = process.env.EMAILJS_PRIVATE_KEY;
+    const serviceId = getEnvValue(["EMAILJS_SERVICE_ID", "NEXT_PUBLIC_EMAILJS_SERVICE_ID"]);
+    const templateId = getEnvValue(["EMAILJS_TEMPLATE_ID", "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID"]);
+    const publicKey = getEnvValue(["EMAILJS_PUBLIC_KEY", "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY", "EMAILJS_USER_ID"]);
+    const privateKey = getEnvValue(["EMAILJS_PRIVATE_KEY", "EMAILJS_ACCESS_TOKEN"]);
 
-    if (!serviceId || !templateId || !publicKey || !privateKey) {
+    const missingVars: string[] = [];
+    if (!serviceId) {
+      missingVars.push("EMAILJS_SERVICE_ID (or NEXT_PUBLIC_EMAILJS_SERVICE_ID)");
+    }
+    if (!templateId) {
+      missingVars.push("EMAILJS_TEMPLATE_ID (or NEXT_PUBLIC_EMAILJS_TEMPLATE_ID)");
+    }
+    if (!publicKey) {
+      missingVars.push("EMAILJS_PUBLIC_KEY (or NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)");
+    }
+    if (!privateKey) {
+      missingVars.push("EMAILJS_PRIVATE_KEY (or EMAILJS_ACCESS_TOKEN)");
+    }
+
+    if (missingVars.length > 0) {
       return NextResponse.json(
         {
-          message:
-            "Email service is not fully configured. Missing one or more EmailJS environment variables.",
+          message: "Email service is not fully configured.",
+          missing: missingVars,
         },
         { status: 500 }
       );
