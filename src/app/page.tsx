@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/button";
+import { ContactForm } from "@/components/contact-form";
 import { Container } from "@/components/container";
 import { HeroBoomerangVideo } from "@/components/hero-boomerang-video";
 import { HomeTabs } from "@/components/home-tabs";
@@ -414,69 +415,7 @@ export default function Home() {
             </div>
 
             {/* Right: form */}
-            <div
-              className="p-8"
-              style={{ border: "1px solid rgba(184,151,90,0.2)", background: "#161616" }}
-            >
-              <div className="grid gap-4">
-                <input
-                  className="h-11 w-full px-4 text-sm outline-none transition-colors"
-                  placeholder="Name"
-                  style={{
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(184,151,90,0.2)",
-                    color: "#f0ede8",
-                  }}
-                />
-                <input
-                  className="h-11 w-full px-4 text-sm outline-none"
-                  placeholder="Email Address"
-                  style={{
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(184,151,90,0.2)",
-                    color: "#f0ede8",
-                  }}
-                />
-                <select
-                  className="h-11 w-full px-4 text-sm outline-none"
-                  style={{
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(184,151,90,0.2)",
-                    color: "rgba(240,237,232,0.6)",
-                    appearance: "none",
-                  }}
-                  defaultValue=""
-                >
-                  <option value="" disabled>I&apos;m interested in…</option>
-                  <option>Buying a property</option>
-                  <option>Selling a property</option>
-                  <option>Leasing</option>
-                  <option>Commercial real estate</option>
-                  <option>Other</option>
-                </select>
-                <textarea
-                  className="w-full px-4 py-3 text-sm outline-none resize-none"
-                  placeholder="Message"
-                  rows={5}
-                  style={{
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(184,151,90,0.2)",
-                    color: "#f0ede8",
-                  }}
-                />
-                <button
-                  type="button"
-                  className="h-11 w-full text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-80"
-                  style={{
-                    background: "#b8975a",
-                    color: "#0f0f0f",
-                    letterSpacing: "0.15em",
-                  }}
-                >
-                  Send Message
-                </button>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </Container>
       </section>
