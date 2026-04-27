@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 import { Container } from "@/components/container";
 import { HeroBoomerangVideo } from "@/components/hero-boomerang-video";
 import { HomeTabs } from "@/components/home-tabs";
+import type { Metadata } from "next";
 
 // All images: Unsplash (free for commercial use, no attribution required)
 const HERO_POSTER = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80";
@@ -49,14 +50,27 @@ const projects = [
   },
 ];
 
-export const metadata = {
-  images: [
+export const metadata: Metadata = {
+  title: "Chabitai Realties",
+  description:
+    "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
+  openGraph: {
+    title: "Chabitai Realties",
+    description:
+      "Montreal's trusted residential & commercial real estate broker. Buy, sell, or lease with confidence.",
+    images: [
       {
-        url: "https://chabitairealties.ca/logo.png",
+        url: "https://www.chabitairealties.ca/cr-logo.png",
         width: 1200,
         height: 630,
+        alt: "Chabitai Realties logo",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://www.chabitairealties.ca/cr-logo.png"],
+  },
 };
 
 export default function Home() {
