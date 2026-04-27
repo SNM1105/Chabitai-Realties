@@ -58,6 +58,7 @@ export async function POST(request: Request) {
         template_params: {
           first_name: body.firstName,
           last_name: body.lastName,
+          email: body.email,
           from_email: body.email,
           phone: body.phone ?? "",
           interest: body.interest,
