@@ -49,6 +49,16 @@ const projects = [
   },
 ];
 
+export const metadata = {
+  images: [
+      {
+        url: "chabitairealties-web\public\favicon.ico.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+};
+
 export default function Home() {
   return (
     <div style={{ background: "#0f0f0f" }}>
