@@ -52,7 +52,7 @@ const projects = [
 export const metadata = {
   images: [
       {
-        url: "chabitairealties-web\public\favicon.ico.png",
+        url: "https://chabitairealties.ca/logo.png",
         width: 1200,
         height: 630,
       },
